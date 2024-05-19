@@ -5,7 +5,9 @@ const tableModal = document.getElementById('tableModal');
 export function openModal({ text }) {
   tableModal.style.visibility = 'visible';
   modalContent.innerHTML = ''; // Clear previous content
-  modalContent.insertAdjacentHTML('beforeend', `<p>${text}</p>`);
+  const elements = text.map(e => `<p style="margin-bottom: 4px">${e}</p>`);
+
+  elements.forEach(e => modalContent.insertAdjacentHTML('beforeend', e));
 }
 
 // Function to close the modal
